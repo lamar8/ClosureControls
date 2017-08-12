@@ -23,7 +23,7 @@
 import Foundation
 
 /// A menu item who executes a closure when activated
-class ClosureMenuItem: NSMenuItem {
+public class ClosureMenuItem: NSMenuItem {
     
     /// The closure invoked when an action is executed
     public var closure: ((Any)->())? = nil
@@ -34,7 +34,7 @@ class ClosureMenuItem: NSMenuItem {
         self.target = self
     }
     
-    required init(coder: NSCoder) {
+    public required init(coder: NSCoder) {
         super.init(coder: coder)
     }
     
