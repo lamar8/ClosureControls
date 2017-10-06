@@ -46,7 +46,7 @@ public class ClosureButton: NSButton {
         super.init(coder: coder)
     }
     
-    func executeClosure(_ sender: Any) {
+    @objc func executeClosure(_ sender: Any) {
         self.closure?(sender)
     }
     

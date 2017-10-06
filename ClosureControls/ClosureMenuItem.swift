@@ -38,7 +38,7 @@ public class ClosureMenuItem: NSMenuItem {
         super.init(coder: coder)
     }
     
-    func executeClosure(_ sender: Any) {
+    @objc func executeClosure(_ sender: Any) {
         closure?(sender)
     }
 }
