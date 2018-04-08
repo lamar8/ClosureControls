@@ -28,6 +28,9 @@ public class ClosureButton: NSButton {
     /// The closure invoked when an action is executed
     public var closure: ((Any)->())? = nil
     
+    /// The `acceptFirstResponser` method will return this value
+    public var overrideAcceptFirstResponder: Bool? = nil
+    
     public init(label: String? = nil, closure: ((Any)->())?) {
         super.init(frame: NSRect(x: 0, y: 0, width: 0, height: 0))
         self.closure = closure
@@ -55,7 +58,9 @@ public class ClosureButton: NSButton {
         self.action = #selector(executeClosure(_:))
     }
     
-    
+    public override var acceptsFirstResponder: Bool {
+        return overrideAcceptFirstResponder ?? super.acceptsFirstResponder
+    }
     
 }
 
