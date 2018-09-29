@@ -32,12 +32,17 @@ public class ClosureButton: NSButton {
     public var overrideAcceptFirstResponder: Bool? = nil
     
     public init(label: String? = nil, closure: ((Any)->())?) {
-        super.init(frame: NSRect(x: 0, y: 0, width: 0, height: 0))
+        super.init(frame: NSRect.zero)
         self.closure = closure
         if let label = label {
             self.title = label
         }
         self.linkActionToButton()
+    }
+    
+    public convenience init(image: NSImage, closure: ((Any)->())?) {
+        self.init(closure: closure)
+        self.image = image
     }
     
     public override init(frame frameRect: NSRect) {
