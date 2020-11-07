@@ -38,6 +38,7 @@ public class ClosureButton: NSButton {
             self.title = label
         }
         self.linkActionToButton()
+        self.bezelStyle = .rounded
     }
     
     public convenience init(image: NSImage, closure: ((Any)->())?) {
